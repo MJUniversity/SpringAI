@@ -14,11 +14,22 @@ public class WeatherService {
     private final RestClient restClient;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    public WeatherService() {
+/*    public WeatherService() {
         this.restClient = RestClient.builder()
                 .baseUrl("https://api.weather.gov")
                 .defaultHeader("Accept", "application/geo+json")
                 .defaultHeader("User-Agent", "WeatherApiClient/1.0 (your@email.com)")
+                .build();
+    }*/
+
+    /**
+     * 百度天气查询
+     */
+    public WeatherService() {
+        this.restClient = RestClient.builder()
+                .baseUrl("https://api.map.baidu.com/weather/v1/?district_id=222405&data_type=now&ak=gY1JIffsDTozewoC8Xeds77nPKcSlvPX")
+                .defaultHeader("Accept", "application/geo+json")
+                .defaultHeader("User-Agent", "WeatherApiClient/1.0 (2584278161@qq.com)")
                 .build();
     }
 
